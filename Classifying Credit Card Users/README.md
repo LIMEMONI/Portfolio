@@ -42,7 +42,7 @@
 예측의 실패정도에 가중치가 주어지기 때문에 평가지표로 적당하다 판단되어 선정
 #### 모델 성능 결과 확인
 - [XGBoost LightGBM CatBoost RandomForest DecisionTree] 5개 모델 성능 확인 결과
-<img width="412" alt="1" src="https://user-images.githubusercontent.com/125957806/233585625-329718e5-bb87-455d-81bd-5b3cab24de44.png">
+<img width="800" alt="1" src="https://user-images.githubusercontent.com/125957806/233585625-329718e5-bb87-455d-81bd-5b3cab24de44.png">
 
 - 성능 개선을 위한 파생변수 생성
 
@@ -60,7 +60,7 @@
 >>ability:  연령 /   근무일 대비 소득<br>
 >>income_mean:      가족 수를 고려한 소득<br>
 - 파생변수 생성 후 모델 성능 확인
-<img width="421" alt="2" src="https://user-images.githubusercontent.com/125957806/233586671-6ded162f-f038-4d6f-9048-dff0a1ae0678.png">
+<img width="800" alt="2" src="https://user-images.githubusercontent.com/125957806/233586671-6ded162f-f038-4d6f-9048-dff0a1ae0678.png">
 
 #### 문제점 발견
 - 파생 변수를 추가했을 때 오히려 성능이 떨어짐
@@ -68,25 +68,25 @@
 #### 중복 데이터 확인
 - Begin_month 는 같지만 , Credit 이 다른 경우
 - Credit 은 같지만 , Begin_month 가 다른 경우
-- <img width="368" alt="3" src="https://user-images.githubusercontent.com/125957806/233587070-acbffeaa-8921-4885-99f2-47aba4c495d9.png">
+- <img width="800" alt="3" src="https://user-images.githubusercontent.com/125957806/233587070-acbffeaa-8921-4885-99f2-47aba4c495d9.png">
 
 #### 고유 ID 컬럼 생성
 - 한 사람이 여러 카드를 발급받았다는 가정 하에, begin_month와 credit를 제외한 모든 컬럼을 합쳐 한 사람을 식별하는 고유 ID 컬럼 생성
 - 고유 ID 컬럼을 생성 후 모델 성능확인
-<img width="275" alt="4" src="https://user-images.githubusercontent.com/125957806/233587396-6761a59a-7921-4462-bfcc-881a30ae2191.png">
+<img width="800" alt="4" src="https://user-images.githubusercontent.com/125957806/233587396-6761a59a-7921-4462-bfcc-881a30ae2191.png">
 
 #### 중복 데이터 삭제
 - Credit은 같지만, Begin_month가 다른 경우 중복 데이터 삭제 후 성능 확인
-<img width="282" alt="5" src="https://user-images.githubusercontent.com/125957806/233788683-0ac2ef9b-83ea-4b65-8eac-18562d5c21ac.png">
+<img width="800" alt="5" src="https://user-images.githubusercontent.com/125957806/233788683-0ac2ef9b-83ea-4b65-8eac-18562d5c21ac.png">
 
 #### 중복 데이터 삭제 및 PCA와 Clustering
 - 중복 데이터를 삭제 후 PCA를 통해 차원을 축소하고 군집화 형성 후 성능 확인
-<img width="280" alt="6" src="https://user-images.githubusercontent.com/125957806/233788772-16218424-b2a2-4fb4-b594-2cbcdfd416c3.png">
+<img width="800" alt="6" src="https://user-images.githubusercontent.com/125957806/233788772-16218424-b2a2-4fb4-b594-2cbcdfd416c3.png">
 
 #### SMOTE_Oversampling 적용
 - 데이터가 적은 Credit 0과 1에 대한 Recall값을 높이기 위해 OverSampling 적용 후 성능 확인
-<img width="294" alt="7" src="https://user-images.githubusercontent.com/125957806/233788825-f2a40ce9-ea98-4a3e-98a9-23d7ff4b1dd6.png">
+<img width="800" alt="7" src="https://user-images.githubusercontent.com/125957806/233788825-f2a40ce9-ea98-4a3e-98a9-23d7ff4b1dd6.png">
 
 #### 최종 모델
 - 최종적으로 선정한 모델과 해당 기법 및 EDA 방법
-<img width="355" alt="8" src="https://user-images.githubusercontent.com/125957806/233788881-d13b7ca0-5444-47e2-a429-19d18b49bcfc.png">
+<img width="800" alt="8" src="https://user-images.githubusercontent.com/125957806/233788881-d13b7ca0-5444-47e2-a429-19d18b49bcfc.png">
